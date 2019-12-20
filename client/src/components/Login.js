@@ -33,32 +33,42 @@ const Login = props => {
   };
   return (
     <Router>
-      <h1>Welcome to the Bubble App!</h1>
-      <form onSubmit={onLogin}>
-        <input
-          type="text"
-          name="username"
-          value={userCredentials.username}
-          placeholder="enter user id"
-          onChange={onFormValueChange}
-        />
-        <input
-          type="password"
-          name="password"
-          value={userCredentials.password}
-          placeholder="enter password"
-          onChange={onFormValueChange}
-        />
-        <button>Log in</button>
-      </form>
-      <Link
-        to="/bubble-page"
-        onClick={() => {
-          props.history.push("/bubble-page");
-        }}
-      >
-        Bubble Page
-      </Link>
+      <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+        <h1>Welcome to the Bubble App!</h1>
+        <Link
+          to="/bubble-page"
+          onClick={() => {
+            props.history.push("/bubble-page");
+          }}
+        >
+          Bubble Page
+        </Link>
+        <form
+          onSubmit={onLogin}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          <input
+            type="text"
+            name="username"
+            value={userCredentials.username}
+            placeholder="enter user id"
+            onChange={onFormValueChange}
+          />
+          <input
+            type="password"
+            name="password"
+            value={userCredentials.password}
+            placeholder="enter password"
+            onChange={onFormValueChange}
+          />
+          <button style={{ width: "200px" }}>Log in</button>
+        </form>
+      </div>
     </Router>
   );
 };
