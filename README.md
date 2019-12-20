@@ -29,10 +29,19 @@ In this project you will create a login page and request a token from the server
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain what a token is used for.
-- [ ] What steps can you take in your web apps to keep your data secure?
-- [ ] Describe how web servers work.
-- [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
+When we want to make an auth , we send out the correct credentials to the server in the header of a post request to the server, we then receive a token that we can use to access private routes.
+
+- [ ] What steps can you take in your web apps to keep your data secure?
+      We can make sure to establish private routes for the pages we only want people logged in to be able to access.
+
+- [ ] Describe how web servers work.
+
+They take many type of requests (PUT/POST/DELETE/PATCH/GET..), and send data back depending on the request and if the auth data checks out correctly.
+Servers can also check if log in credentials are right or wrong.
+
+- [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+      POST/PATCH/GET/DELETE/PUT
 
 ## Project Set Up
 
@@ -53,9 +62,9 @@ Follow these steps to set up and work on your project:
 
 Follow these steps for completing your project:
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo).
+- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
 - [ ] Add your Project Manager as a Reviewer on the Pull-request
-- [ ] PM then will count the HW as done by  merging the branch back into master.
+- [ ] PM then will count the HW as done by merging the branch back into master.
 
 ## Minimum Viable Product
 
@@ -78,11 +87,11 @@ Build a login form to authenticate your users.
 
 ### API Documentation
 
-  * **[POST]** * to `/api/login`: returns a token to be added to the header of all other requests. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda School', password: 'i<3Lambd4' }`
-  * **[GET]** to `/api/colors`: returns the list of colors and their hex codes.
-  * **[POST]** to `/api/colors`: creates a new color object. Pass the color as the `body` of the request (the second argument passed to `axios.post`).
-  * **[PUT]** to `/api/colors/:id`: updates the color using the `id` passed as part of the URL. Send the color object with the updated information as the `body` of the request (the second argument passed to `axios.put`).
-  * **[DELETE]** to `/api/colors/123`: removes the color using the `id` passed as part of the URL (123 in example).
+- **[POST]** \* to `/api/login`: returns a token to be added to the header of all other requests. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda School', password: 'i<3Lambd4' }`
+- **[GET]** to `/api/colors`: returns the list of colors and their hex codes.
+- **[POST]** to `/api/colors`: creates a new color object. Pass the color as the `body` of the request (the second argument passed to `axios.post`).
+- **[PUT]** to `/api/colors/:id`: updates the color using the `id` passed as part of the URL. Send the color object with the updated information as the `body` of the request (the second argument passed to `axios.put`).
+- **[DELETE]** to `/api/colors/123`: removes the color using the `id` passed as part of the URL (123 in example).
 
 ## STRETCH PROBLEMS
 
