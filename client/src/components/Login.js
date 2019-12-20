@@ -51,7 +51,14 @@ const Login = props => {
         />
         <button>Log in</button>
       </form>
-      <Link to="/bubble-page">Bubble Page</Link>
+      <Link
+        to="/bubble-page"
+        onClick={() => {
+          props.history.push("/bubble-page");
+        }}
+      >
+        Bubble Page
+      </Link>
     </Router>
   );
 };
