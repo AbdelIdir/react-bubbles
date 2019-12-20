@@ -9,6 +9,7 @@ const ColorList = ({ colors, updateColors, getAllColors }) => {
   console.log(colors);
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
+  const [addColor, setAddColor] = useState(initialColor);
 
   const editColor = color => {
     setEditing(true);
@@ -24,6 +25,7 @@ const ColorList = ({ colors, updateColors, getAllColors }) => {
       .put(`/colors/${id}`, colorToEdit)
       .then(res => setColorToEdit(res.data))
       .catch(err => console.log(err));
+    getAllColors();
   };
 
   const deleteColor = color => {
@@ -35,9 +37,39 @@ const ColorList = ({ colors, updateColors, getAllColors }) => {
     getAllColors();
   };
 
+  const postColor = e => {
+    e.preventDefault();
+    AxiosAuth()
+      .post("/colors", addColor)
+      .then(res => getAllColors())
+      .catch(err => console.log(err));
+  };
+
   return (
     <div className="colors-wrap">
       <p>colors</p>
+      <form onSubmit={postColor}>
+        <input
+          type="text"
+          onChange={e => setAddColor({ ...addColor, color: e.target.value })}
+          placeholder="colorName"
+          value={addColor.color}
+        />
+        <input
+          type="text"
+          placeholder="hex"
+          onChange={e =>
+            setAddColor({
+              ...addColor,
+              code: { hex: e.target.value }
+            })
+          }
+          value={addColor.code.hex}
+        />
+        <p>{addColor.color}</p>
+        <p>{addColor.code.hex}</p>
+        <button>Add a color</button>
+      </form>
       <ul>
         {colors.map(color => (
           <li key={color.color} onClick={() => editColor(color)}>
@@ -91,7 +123,6 @@ const ColorList = ({ colors, updateColors, getAllColors }) => {
         </form>
       )}
       <div className="spacer" />
-      {/* stretch - build another form here to add a color */}
     </div>
   );
 };
