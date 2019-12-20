@@ -62,27 +62,6 @@ const ColorList = ({ colors, updateColors, getAllColors }) => {
   return (
     <div className="colors-wrap">
       <p>colors</p>
-      {/* <form onSubmit={postColor}>
-        <input
-          type="text"
-          onChange={e => setAddColor({ ...addColor, color: e.target.value })}
-          placeholder="colorName"
-          value={addColor.color}
-        />
-        <input
-          type="text"
-          placeholder="hex"
-          onChange={e =>
-            setAddColor({
-              ...addColor,
-              code: { hex: e.target.value }
-            })
-          }
-          value={addColor.code.hex}
-        />
-       
-        <button>Add a color</button>
-      </form> */}
 
       <form
         style={{ marginTop: "100px", marginBottom: "30px" }}

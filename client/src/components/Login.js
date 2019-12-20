@@ -54,31 +54,6 @@ const Login = props => {
         >
           Bubble Page
         </Link>
-        {/* <form
-          onSubmit={onLogin}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <input
-            type="text"
-            name="username"
-            value={userCredentials.username}
-            placeholder="enter user id"
-            onChange={onFormValueChange}
-          />
-          <input
-            type="password"
-            name="password"
-            value={userCredentials.password}
-            placeholder="enter password"
-            onChange={onFormValueChange}
-          />
-          <button style={{ width: "200px" }}>Log in</button>
-        </form> */}
 
         <form
           className={classes.root}
@@ -106,7 +81,6 @@ const Login = props => {
           />
 
           <TextField
-            style={{ color: "white" }}
             id="outlined-basic"
             label="Password"
             variant="outlined"
